@@ -1,4 +1,6 @@
-<button (click)="showUserForm()">Let's get some lunch</button>
+<div *ngIf="addButton===true">
+  <button (click)="showUserForm()">Let's get some lunch</button>
+</div>
 <div *ngIf="addUser===true">
   <h2>Enter your information</h2>
   <div>

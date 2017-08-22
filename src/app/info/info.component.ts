@@ -9,11 +9,13 @@ import { User } from '../user.model';
 export class InfoComponent implements OnInit {
   @Output() newUserSender = new EventEmitter();
 
+  addButton = true;
   addUser = false;
 
   submitForm(name: string, occupation: string, favoriteFood: string, id: number) {
     var newUserToAdd: User = new User(name, occupation, favoriteFood, id);
     this.newUserSender.emit(newUserToAdd);
+    this.addButton = false;
     this.addUser = false;
   }
 
