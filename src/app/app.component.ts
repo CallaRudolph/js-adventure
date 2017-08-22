@@ -11,8 +11,11 @@ export class AppComponent {
 
   ];
 
+  userFormSubmitted = false;
+
   addUser(newUserFromChild: User) {
     this.masterUserList.push(newUserFromChild);
+    this.userFormSubmitted = true;
   }
 
 }
