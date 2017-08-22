@@ -1,3 +1,17 @@
-<p>
-  info works!
-</p>
+<h2>Enter your information</h2>
+
+<div>
+  <input #newName>
+  <label>Name</label>
+</div>
+<div>
+  <input #newOccupation>
+  <label>Occupation</label>
+</div>
+<div>
+  <input #newFavoriteFood>
+  <label>FavoriteFood</label>
+</div>
+<div>
+  <button (click)="submitForm(newName.value, newOccupation.value, newFavoriteFood.value)">Submit</button>
+</div>
