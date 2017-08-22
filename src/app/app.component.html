@@ -1,6 +1,5 @@
 <div class="container">
-  <h1>
-    Choose your lunch!
-  </h1>
-  <router-outlet></router-outlet>
+  <h1>Choose your lunch!</h1>
+  <app-info (newUserSender)="addUser($event)"></app-info>
+  <!-- <router-outlet></router-outlet> -->
 </div>

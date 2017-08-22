@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../user.model';
 
 @Component({
@@ -7,9 +7,19 @@ import { User } from '../user.model';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
+  @Output() newUserSender = new EventEmitter();
 
-  users: User[] = [
-  ];
+  addUser = false;
+
+  submitForm(name: string, occupation: string, favoriteFood: string, id: number) {
+    var newUserToAdd: User = new User(name, occupation, favoriteFood, id);
+    this.newUserSender.emit(newUserToAdd);
+    this.addUser = false;
+  }
+
+  showUserForm() {
+    this.addUser = true;
+  }
 
   constructor() { }
 
